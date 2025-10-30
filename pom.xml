@@ -12,6 +12,7 @@
 
     <name>CraftAnti</name>
     <description>Custom AntiCheat for CraftVN</description>
+    <url>https://github.com/yourname/CraftAnti</url>
 
     <properties>
         <java.version>17</java.version>
@@ -20,11 +21,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- Mirror để Maven tải plugin nếu Central bị lỗi -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <repositories>
+        <!-- PaperMC snapshots (cho Paper API) -->
         <repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-snapshots/</url>
         </repository>
+
+        <!-- GeyserMC repo (Floodgate snapshots) -->
         <repository>
             <id>opencollab-snapshots</id>
             <url>https://repo.opencollab.dev/maven-snapshots/</url>
@@ -32,6 +44,7 @@
     </repositories>
 
     <dependencies>
+        <!-- Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
@@ -39,6 +52,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Floodgate API -->
         <dependency>
             <groupId>org.geysermc.floodgate</groupId>
             <artifactId>api</artifactId>
@@ -46,6 +60,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- ProtocolLib -->
         <dependency>
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
@@ -56,6 +71,7 @@
 
     <build>
         <plugins>
+            <!-- Maven Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -65,10 +81,11 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven Shade (dùng để tạo jar plugin hoàn chỉnh) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -80,4 +97,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
