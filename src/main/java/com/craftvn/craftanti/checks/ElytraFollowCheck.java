@@ -55,7 +55,7 @@ public class ElytraFollowCheck {
                 double meanThr = plugin.getConfig().getDouble("checks.java.elytrafollow.mean-angle-threshold", 8.0);
                 double stdThr = plugin.getConfig().getDouble("checks.java.elytrafollow.stddev-angle-threshold", 3.0);
                 if (mean <= meanThr && std <= stdThr) {
-                    punish.punishHack(p, "ElytraFollow mean="+String.format(\"%.2f\",mean)+\" sd=\"+String.format(\"%.2f\",std));
+                    punish.punishHack(p, "ElytraFollow mean="+String.format("%.2f",mean)+" sd="+String.format("%.2f",std));
                 }
             }
         }
