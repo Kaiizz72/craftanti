@@ -1,0 +1,71 @@
+# CraftAnti config (PC/PE tách riêng)
+checks:
+  java:
+    reach:
+      enabled: true
+      max: 3.6
+    autoclick:
+      enabled: true
+      max-cps: 20
+      cov-threshold: 0.06
+      buffer: 40
+    aimassist:
+      enabled: true
+      yaw-variance-min: 1.5
+      history: 10
+    scaffold:
+      enabled: true
+      min-delay-ms: 150
+    timer:
+      enabled: true
+      max-moves-per-second: 25
+    nofall:
+      enabled: true
+      min-fall-distance: 4
+    noweb:
+      enabled: true
+      max-speed-in-web: 0.25
+    noclip:
+      enabled: true
+      violation-points: 5.0
+    elytrafollow:
+      enabled: true
+      mean-angle-threshold: 8.0
+      stddev-angle-threshold: 3.0
+      sample-rate-ticks: 2
+      buffer-size: 30
+
+  pe:
+    killaura:
+      enabled: true
+      max-cps: 15
+    hitbox:
+      enabled: true
+      max-distance: 3.5
+    autoclick:
+      enabled: true
+      max-cps: 12
+    reach:
+      enabled: true
+      max: 3.2
+
+punishments:
+  instant-kick: true
+  kicks-before-ban: 3
+  start-ban-minutes: 5
+  increment-minutes: 1
+
+safeguards:
+  alert-perm: 'craftanti.alert'
+  bypass-perm: 'craftanti.bypass'
+  ignore-creative: true
+  ignore-spectator: true
+  max-ping: 300
+  min-tps: 14.0
+  whitelist-worlds: [ 'lobby', 'hub' ]
+
+messages:
+  prefix: '&8[&cCraftAnti&8] '
+  kick: '&cBạn đã bị &4KICK &cvì sử dụng hack (&e%reason%&c)!'
+  ban: '&cBạn đã bị &4BAN &cvì hack (&e%reason%&c)!\n&aThời hạn: &e%time% phút'
+  alert: '&6[CraftAnti] &e%player% &cbị xử lý vì: &f%reason%'
